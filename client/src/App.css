@@ -66,8 +66,22 @@ nav{
   .right{
     display: none;
   }
+  .right ul{
+    flex-direction: column;
+  }
+  .right li{
+    padding: 5px 8px 5px 0px;
+  }
+  .right a{
+    padding: 8px 18px 3px 0px;
+  }
   .ham-burger{
     display: block;
+  }
+  .active{
+    all : unset;
+    border-bottom: 2px solid var(--almostOrange);
+    color: var(--almostOrange);
   }
 }
 
@@ -75,8 +89,8 @@ nav{
   background-color: var(--white);
   display: flex;
   width: 100vw;
-  justify-content: center;
-  padding: 10% 3%;
+  justify-content: flex-start;
+  padding: 7% 3%;
   border-radius: 0 0 12px 12px;
   align-items: center;
   position: absolute;
