@@ -32,7 +32,7 @@ const Login = () => {
 
 
         if (res.status === 201) {
-            window.alert('Login Successful')
+            // window.alert('Login Successful')
             toast.success("Logged in Successfully", {
                 position: "top-right",
                 autoClose: 1000,
