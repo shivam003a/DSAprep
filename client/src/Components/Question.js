@@ -1,10 +1,11 @@
 import React from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Question = (props) => {
 
     const sendData = async ()=>{
         const count = props.count;
-        console.log("Started")
         const res = await fetch('/question',{
             method : "POST",
             headers : {
@@ -15,10 +16,24 @@ const Question = (props) => {
             })
         })
         if(res.status === 200){
-            console.log("Checked");
+            toast.success("Updated Successfully", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+            });
         }
         else{
-            console.log("Not Checked");
+            toast.error("Error while updating", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+            });
         }
     }
 

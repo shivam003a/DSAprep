@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import register from '../images/register.png'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -32,10 +34,26 @@ const Register = () => {
 
 
         if (res.status === 422 || !res) {
-            window.alert("Invalid Registration")
+            // window.alert("Invalid Registration")
+            toast.error("Registration Error", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+            });
         }
         else {
-            window.alert("registration successfull");
+            // window.alert("registration successfull");
+            toast.success("Registration Successfull", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+            });
             navigate('/login')
         }
     }

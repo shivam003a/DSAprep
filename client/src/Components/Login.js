@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import login from '../images/login.png';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -29,12 +31,28 @@ const Login = () => {
         })
 
 
-        if (res.status === 400 || !res) {
-            window.alert('Eror login')
+        if (res.status === 201) {
+            window.alert('Login Successful')
+            toast.success("Logged in Successfully", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+            });
+            navigate('/practice')
         }
         else {
-            window.alert('Login Successful')
-            navigate('/practice')
+            // window.alert('Eror login')
+            toast.error("Error!", {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+            });
         }
     }
     return (

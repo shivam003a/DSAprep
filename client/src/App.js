@@ -1,5 +1,6 @@
 import './App.css';
 import { HashRouter, Routes, Route} from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
 import Error from './Components/Error'
@@ -25,6 +26,7 @@ function App() {
         <Route path='*' element={ <Error /> } />
       </Routes>
       <Footer />
+      <ToastContainer />
     </HashRouter>
   );
 }
