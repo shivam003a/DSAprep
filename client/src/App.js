@@ -7,6 +7,7 @@ import Register from './Components/Register';
 import Login from './Components/Login';
 import Questions from './Components/Practice';
 import Logout from './Components/Logout';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path='logout' element={ <Logout /> } />
         <Route path='*' element={ <Error /> } />
       </Routes>
+      <Footer />
     </HashRouter>
   );
 }

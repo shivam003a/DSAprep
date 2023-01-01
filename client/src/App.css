@@ -96,6 +96,7 @@ nav{
   position: absolute;
   top: 60px;
   left: 0px;
+  z-index: 2;
 }
 
 /*  For the Home Components */
@@ -107,6 +108,10 @@ nav{
   align-items: center;
   background-color: var(--white);
   background: linear-gradient(60deg, var(--white) 40%, transparent 250%), url('./images/bg.png');
+  animation-name: home-pop;
+  animation-duration: .5s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
 }
 
 .home-content{
@@ -140,6 +145,12 @@ nav{
   text-decoration: none;
   background-color: var(--almostBlack);
   color: var(--white);
+  transition: 0.3s linear;
+}
+
+.home-content a:hover{
+  background-color: var(--almostOrange);
+  color: black;
 }
 
 .home-img{
@@ -187,13 +198,34 @@ nav{
   background-color: var(--almostBlack);
   color: var(--white);
 }
-.category{
-  font-size: 10px;
+
+.question:hover{
+  animation-name: pop;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards
 }
+
 
 @media only screen and (max-width: 700px) {
   .questions{
     padding: 0;
+  }
+}
+
+@keyframes pop {
+  0%{
+    transform: scaleX(1.5);
+  }
+  70%{
+    transform: scaleX(1);
+  }
+  90%{
+    transform: scaleX(1.2);
+  }
+  100%{
+    transform: scaleX(1);
   }
 }
 
@@ -209,32 +241,63 @@ nav{
   padding: 0 5%;
   background: linear-gradient(60deg, var(--white) 40%, transparent 250%), url('./images/bg.png');
 }
-.register form{
+
+.rContainer{
+  width: 50%;
+  display: flex;
+  animation-name: home-pop;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+.rContainer form{
+  width: 50%;
   color: var(--white);
   display: flex;
   flex-direction: column;
-  border-radius: 8px;
+  border-radius: 0px 8px 8px 0;
   justify-content: center;
   align-items: center;
   padding: 3% 7%;
   background-color: var(--almostBlack);
 }
-.register form>h2{
-  padding: 0 0 24px 0;
+.rContainer form>h2{
+  padding: 0 0 12px 0;
 }
-.register input{
+.rContainer input{
   width: 100%;
   padding: 8px 20px;
   margin: 6px;
-  border-radius: 0px;
+  border: 0;
+  border-radius: 3px;
 }
-.register input:focus{
+.rContainer input:focus{
   outline: 0px;
+}
+
+.rContainer img{
+  width: 50%;
+  border-radius: 8px 0 0 8px;
+  background-color: var(--almostYellow);
+  /* padding: 4px; */
 }
 
 @media only screen and (max-width: 700px) {
   .register{
     justify-content: center;
+    align-items: center;
+  }
+  .rContainer{
+    width:  70%;
+    flex-direction: column;
+  }
+  .rContainer form{
+    width: unset;
+    border-radius: 8px;
+    padding: 10%;
+  }
+  .rContainer img{
+    display: none;
   }
 }
 
@@ -249,35 +312,102 @@ nav{
   padding: 0 5%;
   background: linear-gradient(60deg, var(--white) 40%, transparent 250%), url('./images/bg.png');
 }
-.login form{
+
+.lContainer{
+  width: 50%;
+  display: flex;
+  animation-name: home-pop;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
+}
+
+.lContainer form{
+  width: 50%;
   color: var(--white);
   display: flex;
   flex-direction: column;
+  border-radius: 0px 8px 8px 0;
   justify-content: center;
-  border-radius: 8px;
   align-items: center;
-  padding: 5% 7%;
+  padding: 3% 7%;
   background-color: var(--almostBlack);
 }
-.login form>h2{
-  padding: 0 0 24px 0;
+.lContainer form>h2{
+  padding: 0 0 12px 0;
 }
-.login input{
+.lContainer input{
   width: 100%;
   padding: 8px 20px;
   margin: 6px;
-  border-radius: 0px;
+  border: 0;
+  border-radius: 3px;
 }
-.login input:focus{
+.lContainer input:focus{
   outline: 0px;
+}
+.lContainer img{
+  width: 50%;
+  border-radius: 8px 0 0 8px;
+  background-color: var(--almostYellow);
+  /* padding: 4px; */
 }
 
 .submit:hover{
   background-color: var(--almostOrange);
 }
 
+@keyframes home-pop {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  70%{
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  90%{
+    transform: scale(0.8);
+    opacity: .9;
+  }
+  100%{
+    transform: scale(1);
+    opacity: 1;
+  }
+  
+}
+
 @media only screen and (max-width: 700px) {
   .login{
     justify-content: center;
+    align-items: center;
   }
+  .lContainer{
+    width:  70%;
+    flex-direction: column;
+  }
+  .lContainer form{
+    width: unset;
+    border-radius: 8px;
+    padding: 10%;
+  }
+  .lContainer img{
+    display: none;
+  }
+}
+
+
+/* for the footer */
+.footer{
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background-color: var(--white);
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

@@ -28,7 +28,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="ham-burger">
-                    <NavLink onClick={toggleMenu}><GiHamburgerMenu/></NavLink>
+                    <NavLink onClick={toggleMenu}><GiHamburgerMenu size={30}/></NavLink>
                 </div>
             </nav>
         </>

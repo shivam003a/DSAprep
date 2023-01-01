@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import register from '../images/register.png'
 
 const Register = () => {
     const navigate = useNavigate();
@@ -42,23 +43,26 @@ const Register = () => {
     return (
         <>
             <div className="register">
-                <form method="POST">
-                    <h2>Register</h2>
-                    <input type="text" name="name" value={user.name} placeholder="name" autoComplete="off"
-                        onChange={handleInput}
-                    />
-                    <input type="email" name="email" value={user.email} placeholder="e-mail" autoComplete="off"
-                        onChange={handleInput}
-                    />
-                    <input type="password" name="password" value={user.password} placeholder="password" autoComplete="off"
-                        onChange={handleInput}
-                    />
-                    <input type="password" name="cpassword" value={user.cpassword} placeholder="confirm password" autoComplete="off"
-                        onChange={handleInput}
-                    />
-                    <input type="submit" className='submit' placeholder="Submit"
-                        onClick={submitData} />
-                </form>
+                <div className='rContainer'>
+                    <img src={register} />
+                    <form method="POST">
+                        <h2>Register</h2>
+                        <input type="text" name="name" value={user.name} placeholder="name" autoComplete="off"
+                            onChange={handleInput}
+                        />
+                        <input type="email" name="email" value={user.email} placeholder="e-mail" autoComplete="off"
+                            onChange={handleInput}
+                        />
+                        <input type="password" name="password" value={user.password} placeholder="password" autoComplete="off"
+                            onChange={handleInput}
+                        />
+                        <input type="password" name="cpassword" value={user.cpassword} placeholder="confirm password" autoComplete="off"
+                            onChange={handleInput}
+                        />
+                        <input type="submit" className='submit' placeholder="Submit"
+                            onClick={submitData} />
+                    </form>
+                </div>
             </div>
         </>
     )
