@@ -2,16 +2,20 @@ import React, { useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import HomeImg from '../images/home-img.png';
 import { UseContext } from "../App";
+import Cookies from 'js-cookie';
 
 const Home = () => {
 
     const { state, dispatch } = useContext(UseContext);
     useEffect(() => {
-        if (document.cookie.hasOwnProperty('dsatokens')) {
+        const token = Cookies.get('dsatokens');
+        if (token) {
             dispatch({ type: "USER", payload: true });
         } else {
             dispatch({ type: "USER", payload: false });
         }
+        
+        console.log(token)
 
     }, [])
 
