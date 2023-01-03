@@ -1,12 +1,9 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { UseContext } from '../App';
 
 const Logout = () => {
-
-    const { state, dispatch } = useContext(UseContext)
 
     const navigate = useNavigate();
     const clearCookie = async () => {
@@ -20,7 +17,6 @@ const Logout = () => {
                 credentials: "include"
             })
 
-            dispatch({type: "USER", payload:false})
             if (res.status !== 200) {
                 throw new Error(res.error);
             }

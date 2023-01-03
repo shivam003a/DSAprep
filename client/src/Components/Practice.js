@@ -1,22 +1,10 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Question from "./Question";
-import { UseContext } from "../App";
-import Cookies from 'js-cookie';
 
 const Questions = () => {
     const navigate = useNavigate();
     const [quesData, setQuestion] = useState([]);
-
-    const { state, dispatch } = useContext(UseContext);
-    useEffect(() => {
-        const token = Cookies.get('dsatokens');
-        if (token) {
-            dispatch({ type: "USER", payload: true });
-        } else {
-            dispatch({ type: "USER", payload: false });
-        }
-    }, [])
 
     const callQuestionPage = async () => {
         try {
