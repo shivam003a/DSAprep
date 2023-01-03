@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import HomeImg from '../images/home-img.png'
+import HomeImg from '../images/home-img.png';
+import { UseContext } from "../App";
 
 const Home = () => {
+
+    const { state, dispatch } = useContext(UseContext);
+    useEffect(() => {
+        if (document.cookie.hasOwnProperty('dsatokens')) {
+            dispatch({ type: "USER", payload: true });
+        } else {
+            dispatch({ type: "USER", payload: false });
+        }
+
+    }, [])
+
     return (
         <>
             <div className="home">

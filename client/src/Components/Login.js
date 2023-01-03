@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import login from '../images/login.png';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UseContext } from '../App';
 
 const Login = () => {
+
+    const { state, dispatch } = useContext(UseContext)
+
     const navigate = useNavigate();
     const [user, setUser] = useState({
         email: "",
@@ -33,6 +37,7 @@ const Login = () => {
 
         if (res.status === 201) {
             // window.alert('Login Successful')
+            dispatch({type: "USER", payload: true});
             toast.success("Logged in Successfully", {
                 position: "top-right",
                 autoClose: 1000,

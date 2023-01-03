@@ -108,10 +108,10 @@ nav{
   align-items: center;
   background-color: var(--white);
   background: linear-gradient(60deg, var(--white) 40%, transparent 250%), url('./images/bg.png');
-  animation-name: home-pop;
+  /* animation-name: home-pop;
   animation-duration: .5s;
   animation-timing-function: linear;
-  animation-fill-mode: both;
+  animation-fill-mode: both; */
 }
 
 .home-content{
@@ -200,32 +200,13 @@ nav{
 }
 
 .question:hover{
-  animation-name: pop;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-  -webkit-animation-fill-mode: forwards
+  transform: scale(1.03,1.1);
 }
 
 
 @media only screen and (max-width: 700px) {
   .questions{
     padding: 0;
-  }
-}
-
-@keyframes pop {
-  0%{
-    transform: scaleX(1.5);
-  }
-  70%{
-    transform: scaleX(1);
-  }
-  90%{
-    transform: scaleX(1.2);
-  }
-  100%{
-    transform: scaleX(1);
   }
 }
 
@@ -245,7 +226,7 @@ nav{
 .rContainer{
   width: 50%;
   display: flex;
-  animation-name: home-pop;
+  animation-name: pop;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -316,7 +297,7 @@ nav{
 .lContainer{
   width: 50%;
   display: flex;
-  animation-name: home-pop;
+  animation-name: pop;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
@@ -358,7 +339,7 @@ nav{
   background-color: var(--almostOrange);
 }
 
-@keyframes home-pop {
+@keyframes pop {
   0%{
     transform: scale(0);
     opacity: 0;
