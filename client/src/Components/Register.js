@@ -34,7 +34,6 @@ const Register = () => {
 
 
         if (res.status === 422 || !res) {
-            // window.alert("Invalid Registration")
             toast.error("Registration Error", {
                 position: "top-right",
                 autoClose: 1000,
@@ -45,7 +44,6 @@ const Register = () => {
             });
         }
         else {
-            // window.alert("registration successfull");
             toast.success("Registration Successfull", {
                 position: "top-right",
                 autoClose: 1000,

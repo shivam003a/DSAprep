@@ -14,13 +14,11 @@
   margin: 0px;
   box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
-  /* outline: 2px solid black; */
 }
 
 /*  For the navigation menu */
 
 nav{
-  /* width: 100vw; */
   height: 64px;
   display: flex;
   justify-content: space-between;
@@ -102,17 +100,15 @@ nav{
 
 /*  For the Home Components */
 .home{
-  /* width: 100vw; */
   height: 89vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   background-color: var(--white);
-  /* background: linear-gradient(60deg, var(--white) 40%, transparent 250%), url('./images/bg.png'); */
-  /* animation-name: home-pop;
-  animation-duration: .5s;
+  animation-name: fade-in;
+  animation-duration: 1s;
   animation-timing-function: linear;
-  animation-fill-mode: both; */
+  animation-fill-mode: both;
 }
 
 .home-content{
@@ -173,10 +169,6 @@ nav{
     justify-content: center;
     align-items: center;
   }
-
-  /* .home-img{
-    display: none;
-  } */
   .home-content{
     width: 100%;
     padding: 0 5%;
@@ -193,9 +185,27 @@ nav{
   }
 }
 
+@keyframes fade-in {
+  0%{
+    opacity: 0.1;
+  }
+  25%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  75%{
+    opacity: 0.7;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
+
 /* For the Questions Component */
 .questions{
-  /* width: 100vw; */
   height: 90vh;
   overflow-y: auto;
   padding: 40px;
@@ -229,7 +239,6 @@ nav{
 
 /* for the register page */
 .register{
-  /* width: 100vw; */
   height: 90vh;
   background-color: var(--white);
   display: flex;
@@ -276,7 +285,6 @@ nav{
   width: 50%;
   border-radius: 8px 0 0 8px;
   background-color: var(--almostYellow);
-  /* padding: 4px; */
 }
 
 @media only screen and (max-width: 700px) {
@@ -300,7 +308,6 @@ nav{
 
 /* For the Login Page */
 .login{
-  /* width: 100vw; */
   height: 90vh;
   background-color: var(--white);
   display: flex;
@@ -348,7 +355,6 @@ nav{
   width: 50%;
   border-radius: 8px 0 0 8px;
   background-color: var(--almostYellow);
-  /* padding: 4px; */
 }
 
 .submit:hover{
@@ -394,11 +400,30 @@ nav{
   }
 }
 
+/* For the error Page */
+.error{
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(60deg, var(--white) 40%, transparent 250%), url('./images/bg.png');
+}
+.error-txt{
+  font-size: 184px;
+  opacity: 0.2;
+}
+.error-txt-desc{
+  position: absolute;
+  font-size: 44px;
+  opacity: 0.8;
+  letter-spacing: 16px;
+}
 
 /* for the footer */
 .footer{
-  /* width: 100vw; */
   text-align: center;
+  font-size: 12px;
+  opacity: 0.9;
   display: flex;
   justify-content: center;
   align-items: center;

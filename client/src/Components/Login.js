@@ -33,7 +33,6 @@ const Login = () => {
 
 
         if (res.status === 201) {
-            // window.alert('Login Successful')
             toast.success("Logged in Successfully", {
                 position: "top-right",
                 autoClose: 1000,
@@ -45,7 +44,6 @@ const Login = () => {
             navigate('/practice')
         }
         else {
-            // window.alert('Eror login')
             toast.error("Error!", {
                 position: "top-right",
                 autoClose: 1000,
@@ -60,7 +58,7 @@ const Login = () => {
         <>
             <div className="login">
                 <div className='lContainer'>
-                    <img src={login} />
+                    <img src={login} alt="login visual"/>
                     <form method="POST">
                         <h2>Login</h2>
                         <input type="email" name="email" value={user.email} placeholder="e-mail" autoComplete="off"

@@ -3,7 +3,10 @@ import React from "react";
 const Error = () => {
     return (
         <>
-            <h1>Error Page</h1>
+            <div className="error">
+                <span className="error-txt">404</span>
+                <span className="error-txt-desc">&nbsp;NOT FOUND</span>
+            </div>
         </>
     )
 }

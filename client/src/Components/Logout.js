@@ -31,7 +31,6 @@ const Logout = () => {
             navigate('/');
         }
         catch (err) {
-            // window.alert("Error Logout");
             toast.success("Logged out Successfully", {
                 position: "top-right",
                 autoClose: 1000,
