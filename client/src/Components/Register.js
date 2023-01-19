@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import register from '../images/register.png'
+import register from '../images/register.svg'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
